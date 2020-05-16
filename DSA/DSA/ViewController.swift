@@ -12,12 +12,130 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        MARK: Activate these methods for the test
 //        testDecimalToBinaryUsingStack()
 //        testDoublyLinkedList()
 //        testStack()
 //        testLinkedList()
-        testCircularLinkedList()
+//        testCircularLinkedList()
+//        testQueue()
+//        testBinaryTree()
+    }
+    
+    func testBinaryTree() {
+        let btree: BinaryTree<Int> = BinaryTree()
+        btree.insert(item: 20)
+        btree.insert(item: 100)
+        btree.insert(item: 3)
+        btree.insert(item: 50)
+        btree.insert(item: 15)
+        btree.insert(item: 250)
+        btree.insert(item: 35)
+        btree.insert(item: 222)
+        btree.insert(item: 588)
+        
+        print("In-Order")
+        btree.inOrderTraversal(root: btree.rootNode)
+        print("\nPre-Order")
+        btree.preOrderTraversal(root: btree.rootNode)
+        print("\n Post-Order")
+        btree.postOrderTraversal(root: btree.rootNode)
+        print("\n Level-Order")
+        btree.levelOrderTraversal()
+        
+        print("\n Search an element")
+        if let _ = btree.search(item: 250) {
+            print("250 is available in the tree")
+        }
+        
+        if let _ = btree.search(item: 20) {
+            print("20 is available in the tree")
+        }
+        
+        if let _ = btree.search(item: 68767) {
+            print("68767 is available in the tree")
+        } else {
+            print("68767 is NOT available in the tree")
+        }
+        
+        
+        print("\n Deletion")
+        btree.delete(item: 222)
+        btree.levelOrderTraversal()
+        
+        print("\n Deletion")
+        btree.delete(item: 100)
+        btree.levelOrderTraversal()
+        
+        print("\n Deletion")
+        btree.delete(item: 250)
+        btree.levelOrderTraversal()
+        
+        print("\n Deletion")
+        btree.delete(item: 20)
+        btree.levelOrderTraversal()
+        
+        print("\n Deletion")
+        btree.delete(item: 3)
+        btree.levelOrderTraversal()
+        
+        print("\n Deletion")
+        btree.delete(item: 35)
+        btree.levelOrderTraversal()
+        
+        print("\n Deletion")
+        btree.delete(item: 15)
+        btree.levelOrderTraversal()
+        
+        print("\n Deletion")
+        btree.delete(item: 50)
+        btree.levelOrderTraversal()
+        
+        print("\n Deletion")
+        btree.delete(item: 588)
+        btree.levelOrderTraversal()
+        
+        print("\n Deletion")
+        btree.delete(item: 56536)
+        
+        
+    }
+    
+    func testQueue() {
+        var queue: Queue<Int> = Queue()
+        queue.enqueue(item: 5)
+        queue.enqueue(item: 6)
+        queue.enqueue(item: 7)
+        queue.enqueue(item: 8)
+        queue.enqueue(item: 9)
+        queue.enqueue(item: 10)
+        print("After insertion: ")
+        queue.printQueue()
+        
+        _ = queue.dequeue()
+        print("After deletion: ")
+        queue.printQueue()
+        
+        _ = queue.dequeue()
+        print("After deletion: ")
+        queue.printQueue()
+        
+        _ = queue.dequeue()
+        print("After deletion: ")
+        queue.printQueue()
+        
+        _ = queue.dequeue()
+        print("After deletion: ")
+        queue.printQueue()
+        
+        _ = queue.dequeue()
+        print("After deletion: ")
+        queue.printQueue()
+        
+        _ = queue.dequeue()
+        print("After deletion: ")
+        queue.printQueue()
+        
     }
     
     func testCircularLinkedList() {

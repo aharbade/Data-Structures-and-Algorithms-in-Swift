@@ -28,4 +28,8 @@ struct Queue <T: Equatable> {
     func isEmpty() -> Bool {
         return size <= 0 ? true : false
     }
+    
+    func printQueue() {
+        linkedList.printLinkedList()
+    }
 }
